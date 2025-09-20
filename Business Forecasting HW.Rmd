@@ -1,0 +1,101 @@
+---
+title: "Employee Survey Analysis"
+author: "Jyueying Chen"
+date: "2025-09-19"
+output: html_document
+---
+
+# Task 1: Summary Statistics and Boxplots
+
+**Summary Statistics and Boxplot for Numerical Variables**
+
+```{r}
+str(EmployeeSurveyData)
+```
+```{r}
+summary(EmployeeSurveyData)
+```
+```{r}
+summary(EmployeeSurveyData$Age)
+```
+```{r}
+summary(EmployeeSurveyData$YearofWork)
+```
+```{r}
+boxplot(EmployeeSurveyData$Age, main="Age")
+```
+```{r}
+boxplot(EmployeeSurveyData$YearofWork, main="YearofWork")
+```
+# Task 2: Factor Conversion
+
+**Converting numerical variables to factors**
+
+```{r}
+EmployeeSurveyData$Age <- as.factor(EmployeeSurveyData$Age)
+```
+```{r}
+str(EmployeeSurveyData$Age)
+```
+```{r}
+EmployeeSurveyData$YearofWork <- as.factor(EmployeeSurveyData$YearofWork)
+```
+```{r}
+str(EmployeeSurveyData$YearofWork)
+```
+# Task 3: Visualizations
+
+**Plot the right visual for each column**
+
+```{r}
+boxplot(EmployeeSurveyData$Age, main="Age")
+```
+```{r}
+boxplot(EmployeeSurveyData$YearofWork, main="YearofWork")
+```
+```{r}
+pie(table(EmployeeSurveyData$Gender), main="Gender Distribution")
+```
+```{r}
+barplot(table(EmployeeSurveyData$JobCharacteristic), main="JobCharacteristic")
+```
+```{r}
+barplot(table(EmployeeSurveyData$BudgetaryDecisionsParticipation), main="BudgetaryDecisionsParticipation")
+```
+```{r}
+barplot(table(EmployeeSurveyData$JobSatisfaction), main="JobSatisfaction")
+```
+```{r}
+hist(EmployeeSurveyData$PromotionChance)
+```
+```{r}
+barplot(table(EmployeeSurveyData$LevelofProud), main="LevelofProud")
+```
+```{r}
+barplot(table(EmployeeSurveyData$RelationsBetweenEmployees), main="RelationsBetweenEmployees")
+```
+```{r}
+hist(EmployeeSurveyData$TurnDownOtherJob)
+```
+# Task 4: Scatter Plots
+
+**Plot scatter plots to show few relationships**
+
+```{r}
+scatter.smooth(EmployeeSurveyData$Age, EmployeeSurveyData$YearofWork)
+```
+```{r}
+scatter.smooth(EmployeeSurveyData$YearofWork, EmployeeSurveyData$PromotionChance)
+```
+```{r}
+scatter.smooth(EmployeeSurveyData$YearofWork, EmployeeSurveyData$TurnDownOtherJob)
+```
+
+
+```{r}
+scatter.smooth(EmployeeSurveyData$JobSatisfaction, EmployeeSurveyData$LevelofProud)
+```
+
+
+
+
