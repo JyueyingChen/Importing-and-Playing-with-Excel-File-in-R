@@ -5,6 +5,13 @@ date: "2025-09-19"
 output: html_document
 ---
 
+```{r}
+EmployeeSurveyData <- read.csv("EmployeeSurveyData.csv")
+str(EmployeeSurveyData)
+```
+
+
+
 # Task 1: Summary Statistics and Boxplots
 
 **Summary Statistics and Boxplot for Numerical Variables**
@@ -27,22 +34,68 @@ boxplot(EmployeeSurveyData$Age, main="Age")
 ```{r}
 boxplot(EmployeeSurveyData$YearofWork, main="YearofWork")
 ```
-# Task 2: Factor Conversion
+
+
+# Task 2: Factor Conversions
 
 **Converting numerical variables to factors**
 
+
 ```{r}
-EmployeeSurveyData$Age <- as.factor(EmployeeSurveyData$Age)
+EmployeeSurveyData$Gender <- as.factor(EmployeeSurveyData$Gender)
 ```
 ```{r}
-str(EmployeeSurveyData$Age)
+str(EmployeeSurveyData$Gender)
 ```
 ```{r}
-EmployeeSurveyData$YearofWork <- as.factor(EmployeeSurveyData$YearofWork)
+EmployeeSurveyData$JobSatisfaction <- as.factor(EmployeeSurveyData$JobSatisfaction)
 ```
 ```{r}
-str(EmployeeSurveyData$YearofWork)
+str(EmployeeSurveyData$JobSatisfaction)
 ```
+```{r}
+EmployeeSurveyData$JobCharacteristic <- as.factor(EmployeeSurveyData$JobCharacteristic)
+```
+```{r}
+str(EmployeeSurveyData$JobCharacteristic)
+```
+```{r}
+EmployeeSurveyData$PromotionChance <- as.factor(EmployeeSurveyData$PromotionChance)
+```
+```{r}
+str(EmployeeSurveyData$PromotionChance)
+```
+```{r}
+EmployeeSurveyData$AllowMakingDecision <- as.factor(EmployeeSurveyData$AllowMakingDecision)
+```
+```{r}
+str(EmployeeSurveyData$AllowMakingDecision)
+```
+```{r}
+EmployeeSurveyData$BudgetaryDecisionsParticipation <- as.factor(EmployeeSurveyData$BudgetaryDecisionsParticipation)
+```
+```{r}
+str(EmployeeSurveyData$BudgetaryDecisionsParticipation)
+```
+```{r}
+EmployeeSurveyData$LevelofProud <- as.factor(EmployeeSurveyData$LevelofProud)
+```
+```{r}
+str(EmployeeSurveyData$LevelofProud)
+```
+```{r}
+EmployeeSurveyData$TurnDownOtherJob <- as.factor(EmployeeSurveyData$TurnDownOtherJob)
+```
+```{r}
+str(EmployeeSurveyData$TurnDownOtherJob)
+```
+```{r}
+EmployeeSurveyData$RelationsBetweenEmployees <- as.factor(EmployeeSurveyData$RelationsBetweenEmployees)
+```
+```{r}
+str(EmployeeSurveyData$RelationsBetweenEmployees)
+```
+
 # Task 3: Visualizations
 
 **Plot the right visual for each column**
@@ -51,7 +104,7 @@ str(EmployeeSurveyData$YearofWork)
 boxplot(EmployeeSurveyData$Age, main="Age")
 ```
 ```{r}
-boxplot(EmployeeSurveyData$YearofWork, main="YearofWork")
+hist(EmployeeSurveyData$YearofWork, main="YearofWork")
 ```
 ```{r}
 pie(table(EmployeeSurveyData$Gender), main="Gender Distribution")
@@ -66,7 +119,7 @@ barplot(table(EmployeeSurveyData$BudgetaryDecisionsParticipation), main="Budgeta
 barplot(table(EmployeeSurveyData$JobSatisfaction), main="JobSatisfaction")
 ```
 ```{r}
-hist(EmployeeSurveyData$PromotionChance)
+barplot(table(EmployeeSurveyData$PromotionChance), main="PromotionChance")
 ```
 ```{r}
 barplot(table(EmployeeSurveyData$LevelofProud), main="LevelofProud")
@@ -75,7 +128,7 @@ barplot(table(EmployeeSurveyData$LevelofProud), main="LevelofProud")
 barplot(table(EmployeeSurveyData$RelationsBetweenEmployees), main="RelationsBetweenEmployees")
 ```
 ```{r}
-hist(EmployeeSurveyData$TurnDownOtherJob)
+barplot(table(EmployeeSurveyData$TurnDownOtherJob), main="TurnDownOtherJob")
 ```
 # Task 4: Scatter Plots
 
